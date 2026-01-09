@@ -1,4 +1,4 @@
-# 3D Cell Viewer - PhD Pipeline Instructions
+# Napari_Byibaix
 ---
 
 ## 📋 Complete Setup (First Time)
