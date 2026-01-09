@@ -1,0 +1,38 @@
+# 3D Cell Viewer - PhD Pipeline
+# Python 3.12 recommended
+# Requires: CUDA Toolkit 12.6+ and Microsoft Visual C++ Build Tools
+
+# Core Visualization
+napari[all]==0.6.6
+vispy>=0.15.2
+PyQt5>=5.15.11
+
+# Image I/O & Formats
+aicsimageio>=4.14.0
+aicspylibczi>=3.3.1
+tifffile>=2023.2.28
+imageio>=2.37.2
+
+# GPU Processing
+cupy-cuda12x>=13.6.0
+pyclesperanto-prototype>=0.24.5
+pyopencl>=2025.2.7
+reikna>=0.8.0
+
+# Deconvolution
+RedLionfish>=0.10
+
+# Scientific Computing
+numpy>=1.26.4
+scipy>=1.16.3
+scikit-image>=0.26.0
+pandas>=2.3.3
+
+# Napari Plugins
+napari-animation>=0.0.9
+magicgui>=0.10.1
+
+# Utilities
+tqdm>=4.67.1
+PyYAML>=6.0.3
+
