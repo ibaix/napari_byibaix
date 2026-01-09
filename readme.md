@@ -1,15 +1,4 @@
 # 3D Cell Viewer - PhD Pipeline Instructions
-
-## 🚀 Quick Start
-
-```powershell
-# Activate virtual environment
-.\venv\Scripts\Activate
-
-# Run the viewer
-.\venv\Scripts\python.exe scripts\run_viewer.py
-```
-
 ---
 
 ## 📋 Complete Setup (First Time)
@@ -17,7 +6,7 @@
 ### 1. Prerequisites
 
 - **Python 3.12** (recommended for package compatibility)
-- **NVIDIA GPU** (any CUDA-compatible GPU: RTX 3060, 3080, 4090, 5090, etc.)
+- **NVIDIA GPU** (any CUDA-compatible GPU: RTX 30xx, 40xx, 50xx, etc.)
 - **NVIDIA Studio Drivers** (recommended) or Game Ready drivers
 - **CUDA Toolkit 12.6+** from [NVIDIA](https://developer.nvidia.com/cuda-downloads)
 - **Microsoft Visual C++ Build Tools** from [Visual Studio](https://visualstudio.microsoft.com/visual-cpp-build-tools/)
@@ -46,6 +35,10 @@ If you see a CUDA path warning, set the environment variable:
 ```powershell
 [System.Environment]::SetEnvironmentVariable("CUDA_PATH", "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6", "User")
 # Restart terminal after running this
+```
+
+# Run the viewer
+.\venv\Scripts\python.exe scripts\run_viewer.py
 ```
 
 ---
