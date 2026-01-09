@@ -2,7 +2,12 @@ venv/
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
-data/
-output/
+
+# Ignore contents of data and output folders, but keep the folders
+data/*
+!data/.gitkeep
+output/*
+!output/.gitkeep
+
+# Ignore rendered images (except in output folder which is already handled)
 *.png
-data/
