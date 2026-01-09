@@ -741,31 +741,34 @@ def launch_phd_pipeline():
         safe_toggle_widget('render', '🎬 Rendering Style')
 
     # 10. The "PhD Report" High-Res Export Hotkeys
+    # Get the script directory (repo root) and create output folder
+    import os
+    from datetime import datetime
+    
+    script_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    output_dir = os.path.join(script_dir, "output")
+    os.makedirs(output_dir, exist_ok=True)
+    print(f"📁 Renders will be saved to: {output_dir}")
+    
     @viewer.bind_key('s')
     def save_4k_render(viewer):
-        import os
-        from datetime import datetime
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        out_path = os.path.join(os.getcwd(), f"render_4K_{timestamp}.png")
+        out_path = os.path.join(output_dir, f"render_4K_{timestamp}.png")
         viewer.screenshot(out_path, canvas_only=True, size=(3840, 2160))
         print(f"📸 4K Render (3840×2160) saved to: {out_path}")
     
     @viewer.bind_key('Shift-s')
     def save_8k_render(viewer):
-        import os
-        from datetime import datetime
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        out_path = os.path.join(os.getcwd(), f"render_8K_{timestamp}.png")
+        out_path = os.path.join(output_dir, f"render_8K_{timestamp}.png")
         viewer.screenshot(out_path, canvas_only=True, size=(7680, 4320))
         print(f"📸 8K Render (7680×4320) saved to: {out_path}")
     
     @viewer.bind_key('p')
     def save_print_render(viewer):
-        import os
-        from datetime import datetime
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         # 300 DPI at A4 size ≈ 3508 × 2480 pixels
-        out_path = os.path.join(os.getcwd(), f"render_PRINT_{timestamp}.png")
+        out_path = os.path.join(output_dir, f"render_PRINT_{timestamp}.png")
         viewer.screenshot(out_path, canvas_only=True, size=(4000, 3000))
         print(f"📸 Print-Quality Render (4000×3000, ~300DPI A4) saved to: {out_path}")
 
